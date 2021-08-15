@@ -10,6 +10,9 @@ public class ErroDeFormularioDto {
         this.erro = erro;
     }
 
+    public ErroDeFormularioDto() {
+    }
+
     public String getCampo() {
         return campo;
     }

@@ -61,4 +61,8 @@ public class NovaPropostaRequest {
         Endereco endereco = new Endereco(cep, logradouro, numero, bairro, localidade, uf);
         return new Proposta(documento, email, nome, endereco, salario);
     }
+
+    public String getDocumento() {
+        return documento;
+    }
 }
