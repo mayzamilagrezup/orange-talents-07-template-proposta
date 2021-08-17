@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.analise_financeira;
+package br.com.zupacademy.mayza.proposta.propostas.analise_financeira;
 
 import br.com.zupacademy.mayza.proposta.propostas.StatusProposta;
 

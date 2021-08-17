@@ -1,5 +1,7 @@
 package br.com.zupacademy.mayza.proposta.propostas;
 
+import br.com.zupacademy.mayza.proposta.cartoes.Cartao;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -28,6 +30,9 @@ public class Proposta {
 
     @Enumerated(EnumType.STRING)
     private StatusProposta status;
+
+    @OneToOne(mappedBy = "proposta", cascade = CascadeType.MERGE)
+    private Cartao cartao;
 
     public Proposta(String documento, String email, String nome, Endereco endereco, BigDecimal salario) {
         this.documento = documento;
@@ -59,6 +64,14 @@ public class Proposta {
 
     public void atualizaStatusProposta(StatusProposta statusProposta) {
         this.status = statusProposta;
+    }
+
+    public void associaCartao(String numero) {
+        this.cartao = new Cartao(this, numero);
+    }
+
+    public Cartao getCartao() {
+        return cartao;
     }
 
     @Override
