@@ -22,6 +22,17 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
+  postgres-propostas:
+    image: 'postgres:9.6-alpine'
+    volumes:
+      - propostas-volume:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: propostas
+
   postgres:
     image: 'postgres:9.6-alpine'
     volumes:
@@ -31,7 +42,7 @@ services:
     environment:
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
-      POSTGRES_MULTIPLE_DATABASES: propostas,keycloak
+      POSTGRES_DB: keycloak
       POSTGRES_HOST: postgres
 
   keycloak:
@@ -138,3 +149,4 @@ volumes:
   grafana-volume:
   prometheus-volume:
   postgres-volume:
+  propostas-volume:
