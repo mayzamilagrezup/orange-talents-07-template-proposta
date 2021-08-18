@@ -1,6 +1,7 @@
 package br.com.zupacademy.mayza.proposta.propostas;
 
 import br.com.zupacademy.mayza.proposta.cartoes.Cartao;
+import br.com.zupacademy.mayza.proposta.cartoes.associa_cartao.CartaoPropostaResponse;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -66,12 +67,8 @@ public class Proposta {
         this.status = statusProposta;
     }
 
-    public void associaCartao(String numero) {
-        this.cartao = new Cartao(this, numero);
-    }
-
-    public Cartao getCartao() {
-        return cartao;
+    public void associaCartao(CartaoPropostaResponse response) {
+        this.cartao = new Cartao(response, this);
     }
 
     @Override

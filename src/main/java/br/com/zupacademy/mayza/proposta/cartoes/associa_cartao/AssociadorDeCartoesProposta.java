@@ -34,10 +34,10 @@ public class AssociadorDeCartoesProposta {
             try {
                 CartaoPropostaRequest request = new CartaoPropostaRequest(proposta);
                 CartaoPropostaResponse response = integracaoCartao.buscaNumeroCartao(request);
-                proposta.associaCartao(response.getNumeroDoCartao());
+                proposta.associaCartao(response);
                 propostaRepository.save(proposta);
 
-                log.info("Foi associado o cartão de número {} a proposta {}", proposta.getCartao().getNumero(), proposta.getId());
+                log.info("Foi associado o cartão de número {} a proposta {}", response.getNumeroDoCartao(), proposta.getId());
 
             } catch (FeignException e) {
                 log.error("Não foi possível associar cartão para a proposta {}. Mensagem {}. Causa {}", proposta.getId(), e.getMessage(), e.getCause());
