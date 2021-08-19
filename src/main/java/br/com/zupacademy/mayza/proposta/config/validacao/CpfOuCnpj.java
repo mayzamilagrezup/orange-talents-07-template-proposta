@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.validacao;
+package br.com.zupacademy.mayza.proposta.config.validacao;
 
 import org.hibernate.validator.constraints.CompositionType;
 import org.hibernate.validator.constraints.ConstraintComposition;

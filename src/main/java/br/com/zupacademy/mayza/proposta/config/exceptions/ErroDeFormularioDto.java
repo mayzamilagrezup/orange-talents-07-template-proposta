@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.exceptions;
+package br.com.zupacademy.mayza.proposta.config.exceptions;
 
 public class ErroDeFormularioDto {
 

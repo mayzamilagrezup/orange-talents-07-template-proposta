@@ -1,6 +1,6 @@
 package br.com.zupacademy.mayza.proposta.propostas;
 
-import br.com.zupacademy.mayza.proposta.validacao.CpfOuCnpj;
+import br.com.zupacademy.mayza.proposta.config.validacao.CpfOuCnpj;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

@@ -1,5 +1,6 @@
-package br.com.zupacademy.mayza.proposta.exceptions;
+package br.com.zupacademy.mayza.proposta.config.exceptions;
 
+import br.com.zupacademy.mayza.proposta.config.exceptions.ErroDeFormularioDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
