@@ -20,13 +20,13 @@ import java.util.Optional;
 public class SolicitaBloqueioController {
 
     private CartaoRepository cartaoRepository;
-    private NotificadorBloqueio notificadorBloqueio;
+    private NotificadorDeBloqueioCartao notificadorDeBloqueioCartao;
     private final Logger log = LoggerFactory.getLogger(SolicitaBloqueioController.class);
 
 
-    public SolicitaBloqueioController(CartaoRepository cartaoRepository, NotificadorBloqueio notificadorBloqueio) {
+    public SolicitaBloqueioController(CartaoRepository cartaoRepository, NotificadorDeBloqueioCartao notificadorDeBloqueioCartao) {
         this.cartaoRepository = cartaoRepository;
-        this.notificadorBloqueio = notificadorBloqueio;
+        this.notificadorDeBloqueioCartao = notificadorDeBloqueioCartao;
     }
 
     @PostMapping("/{id}/bloqueio")
@@ -53,7 +53,7 @@ public class SolicitaBloqueioController {
             return ResponseEntity.unprocessableEntity().build();
         }
 
-        notificadorBloqueio.notificaBloqueio(cartao, ipCliente, userAgent);
+        notificadorDeBloqueioCartao.notificaBloqueio(cartao, ipCliente, userAgent);
         log.info("Cartão {} bloqueado!", cartao.getNumeroDoCartao());
 
         return ResponseEntity.ok().build();

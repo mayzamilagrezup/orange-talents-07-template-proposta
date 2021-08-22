@@ -15,14 +15,14 @@ import javax.persistence.PersistenceContext;
 import java.util.Map;
 
 @Component
-public class NotificadorBloqueio {
+public class NotificadorDeBloqueioCartao {
 
     private IntegracaoCartao integracaoCartao;
     @PersistenceContext
     private EntityManager manager;
-    private final Logger log = LoggerFactory.getLogger(NotificadorBloqueio.class);
+    private final Logger log = LoggerFactory.getLogger(NotificadorDeBloqueioCartao.class);
 
-    public NotificadorBloqueio(IntegracaoCartao integracaoCartao) {
+    public NotificadorDeBloqueioCartao(IntegracaoCartao integracaoCartao) {
         this.integracaoCartao = integracaoCartao;
     }
 
