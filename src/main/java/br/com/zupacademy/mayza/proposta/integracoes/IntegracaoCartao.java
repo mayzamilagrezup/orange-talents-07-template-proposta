@@ -1,5 +1,6 @@
 package br.com.zupacademy.mayza.proposta.integracoes;
 
+import br.com.zupacademy.mayza.proposta.aviso_viagem.AvisoDeViagemRequest;
 import br.com.zupacademy.mayza.proposta.cartoes.CartaoPropostaRequest;
 import br.com.zupacademy.mayza.proposta.cartoes.CartaoPropostaResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,4 +18,9 @@ public interface IntegracaoCartao {
 
     @PostMapping("/{id}/bloqueios")
     public String notificaBloqueioCartao(@PathVariable("id") String numeroCartao,  Map<String, String> request);
+
+    @PostMapping("/{id}/avisos")
+    public String notificaViagem(@PathVariable("id") String numeroCartao, AvisoDeViagemRequest request);
+
+
 }

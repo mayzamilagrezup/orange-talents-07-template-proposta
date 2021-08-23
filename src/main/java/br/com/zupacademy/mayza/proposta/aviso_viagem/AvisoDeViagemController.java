@@ -18,10 +18,12 @@ import java.util.Optional;
 public class AvisoDeViagemController {
 
     private CartaoRepository cartaoRepository;
+    private NotificadorDeViagem notificadorDeViagem;
     private final Logger log = LoggerFactory.getLogger(AvisoDeViagemController.class);
 
-    public AvisoDeViagemController(CartaoRepository cartaoRepository) {
+    public AvisoDeViagemController(CartaoRepository cartaoRepository, NotificadorDeViagem notificadorDeViagem) {
         this.cartaoRepository = cartaoRepository;
+        this.notificadorDeViagem = notificadorDeViagem;
     }
 
     @PostMapping("/{id}/aviso-de-viagem")
@@ -43,11 +45,11 @@ public class AvisoDeViagemController {
         }
 
         Cartao cartao = optionalCartao.get();
-        AvisoDeViagem avisoDeViagem = request.toAvisoDeViagem(cartao, ipCliente, userAgent);
+        notificadorDeViagem.notificaViagem(cartao,request);
 
+        AvisoDeViagem avisoDeViagem = request.toAvisoDeViagem(cartao, ipCliente, userAgent);
         cartao.adicionaAvisoViagem(avisoDeViagem);
         cartaoRepository.save(cartao);
-        log.info("Aviso de viagem cadastrado para o cartão {}", cartao.getNumeroDoCartao());
 
         return ResponseEntity.ok().build();
 

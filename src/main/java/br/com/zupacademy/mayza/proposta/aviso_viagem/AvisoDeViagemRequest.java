@@ -25,4 +25,12 @@ public class AvisoDeViagemRequest {
     public AvisoDeViagem toAvisoDeViagem(Cartao cartao, String ipCliente, String userAgent) {
         return new AvisoDeViagem(cartao, destinoViagem, dataTermino, ipCliente, userAgent);
     }
+
+    public LocalDate getDataTermino() {
+        return dataTermino;
+    }
+
+    public String getDestinoViagem() {
+        return destinoViagem;
+    }
 }
