@@ -52,6 +52,5 @@ public class AvisoDeViagemController {
         cartaoRepository.save(cartao);
 
         return ResponseEntity.ok().build();
-
     }
 }

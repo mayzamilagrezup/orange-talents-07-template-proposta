@@ -26,11 +26,4 @@ public class AvisoDeViagemRequest {
         return new AvisoDeViagem(cartao, destinoViagem, dataTermino, ipCliente, userAgent);
     }
 
-    public LocalDate getDataTermino() {
-        return dataTermino;
-    }
-
-    public String getDestinoViagem() {
-        return destinoViagem;
-    }
 }
