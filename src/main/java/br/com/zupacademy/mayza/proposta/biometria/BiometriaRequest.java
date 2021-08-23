@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.cartoes.biometria;
+package br.com.zupacademy.mayza.proposta.biometria;
 
 import br.com.zupacademy.mayza.proposta.cartoes.Cartao;
 import com.fasterxml.jackson.annotation.JsonCreator;

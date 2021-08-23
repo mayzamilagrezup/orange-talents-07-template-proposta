@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.cartoes.biometria;
+package br.com.zupacademy.mayza.proposta.biometria;
 
 import br.com.zupacademy.mayza.proposta.cartoes.Cartao;
 import br.com.zupacademy.mayza.proposta.cartoes.CartaoRepository;

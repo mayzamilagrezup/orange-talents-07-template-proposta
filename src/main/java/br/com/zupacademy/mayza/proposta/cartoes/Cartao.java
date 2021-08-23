@@ -1,8 +1,8 @@
 package br.com.zupacademy.mayza.proposta.cartoes;
 
-import br.com.zupacademy.mayza.proposta.cartoes.associa_cartao.CartaoPropostaResponse;
-import br.com.zupacademy.mayza.proposta.cartoes.biometria.Biometria;
-import br.com.zupacademy.mayza.proposta.cartoes.bloqueio.Bloqueio;
+import br.com.zupacademy.mayza.proposta.aviso_viagem.AvisoDeViagem;
+import br.com.zupacademy.mayza.proposta.biometria.Biometria;
+import br.com.zupacademy.mayza.proposta.bloqueio.Bloqueio;
 import br.com.zupacademy.mayza.proposta.propostas.Proposta;
 
 import javax.persistence.*;
@@ -32,6 +32,9 @@ public class Cartao {
     @OneToMany(mappedBy = "cartao")
     private Set<Biometria> biometrias = new HashSet<>();
 
+    @OneToMany(mappedBy = "cartao", cascade = CascadeType.MERGE)
+    private Set<AvisoDeViagem> avisos = new HashSet<>();
+
     @OneToOne
     private Proposta proposta;
 
@@ -60,5 +63,9 @@ public class Cartao {
 
     public void setStatusCartao(StatusCartao statusCartao) {
         this.statusCartao = statusCartao;
+    }
+
+    public void adicionaAvisoViagem(AvisoDeViagem avisoDeViagem) {
+        this.avisos.add(avisoDeViagem);
     }
 }

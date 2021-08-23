@@ -1,6 +1,4 @@
-package br.com.zupacademy.mayza.proposta.propostas.analise_financeira;
-
-import br.com.zupacademy.mayza.proposta.propostas.Proposta;
+package br.com.zupacademy.mayza.proposta.propostas;
 
 public class SolicitacaoAnaliseRequest {
 

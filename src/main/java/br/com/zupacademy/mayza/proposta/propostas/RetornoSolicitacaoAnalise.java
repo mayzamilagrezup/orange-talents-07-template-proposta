@@ -1,6 +1,4 @@
-package br.com.zupacademy.mayza.proposta.propostas.analise_financeira;
-
-import br.com.zupacademy.mayza.proposta.propostas.StatusProposta;
+package br.com.zupacademy.mayza.proposta.propostas;
 
 public enum RetornoSolicitacaoAnalise {
 

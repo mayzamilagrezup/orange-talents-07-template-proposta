@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.cartoes.bloqueio;
+package br.com.zupacademy.mayza.proposta.bloqueio;
 
 import br.com.zupacademy.mayza.proposta.cartoes.Cartao;
 import br.com.zupacademy.mayza.proposta.cartoes.StatusCartao;

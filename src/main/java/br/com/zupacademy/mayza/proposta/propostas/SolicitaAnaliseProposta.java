@@ -1,8 +1,6 @@
-package br.com.zupacademy.mayza.proposta.propostas.analise_financeira;
+package br.com.zupacademy.mayza.proposta.propostas;
 
 import br.com.zupacademy.mayza.proposta.integracoes.IntegracaoAnaliseFinanceira;
-import br.com.zupacademy.mayza.proposta.propostas.Proposta;
-import br.com.zupacademy.mayza.proposta.propostas.StatusProposta;
 import feign.FeignException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

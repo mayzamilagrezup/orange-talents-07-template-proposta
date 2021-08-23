@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.proposta.cartoes.associa_cartao;
+package br.com.zupacademy.mayza.proposta.cartoes;
 
 import br.com.zupacademy.mayza.proposta.propostas.Proposta;
 

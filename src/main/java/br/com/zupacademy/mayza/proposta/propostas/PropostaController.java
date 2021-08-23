@@ -1,6 +1,5 @@
 package br.com.zupacademy.mayza.proposta.propostas;
 
-import br.com.zupacademy.mayza.proposta.propostas.analise_financeira.SolicitaAnaliseProposta;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

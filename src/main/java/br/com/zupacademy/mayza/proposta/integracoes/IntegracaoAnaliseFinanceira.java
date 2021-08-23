@@ -1,6 +1,6 @@
 package br.com.zupacademy.mayza.proposta.integracoes;
 
-import br.com.zupacademy.mayza.proposta.propostas.analise_financeira.SolicitacaoAnaliseRequest;
+import br.com.zupacademy.mayza.proposta.propostas.SolicitacaoAnaliseRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
