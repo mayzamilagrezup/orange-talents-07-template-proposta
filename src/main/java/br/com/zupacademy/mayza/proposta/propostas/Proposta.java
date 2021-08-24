@@ -35,8 +35,8 @@ public class Proposta {
     @OneToOne(mappedBy = "proposta", cascade = CascadeType.MERGE)
     private Cartao cartao;
 
-    public Proposta(String documento, String email, String nome, Endereco endereco, BigDecimal salario) {
-        this.documento = documento;
+    public Proposta(DocumentoLimpo documentoLimpo, String email, String nome, Endereco endereco, BigDecimal salario) {
+        this.documento = documentoLimpo.hash();
         this.email = email;
         this.nome = nome;
         this.endereco = endereco;
