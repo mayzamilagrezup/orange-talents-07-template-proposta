@@ -4,9 +4,9 @@ import br.com.zupacademy.mayza.proposta.integracoes.IntegracaoAnaliseFinanceira;
 import feign.FeignException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class SolicitaAnaliseProposta {
 
     private IntegracaoAnaliseFinanceira integracao;
@@ -20,8 +20,8 @@ public class SolicitaAnaliseProposta {
 
         try {
             SolicitacaoAnaliseRequest analiseSolicitada = new SolicitacaoAnaliseRequest(proposta);
-            integracao.solicitaAnalise(analiseSolicitada);
-            log.info("A proposta de documento {} foi analisada com sucesso.", proposta.getDocumento());
+            String resposta = integracao.solicitaAnalise(analiseSolicitada);
+            log.info("A proposta de documento {} foi analisada com sucesso. Resposta {}", proposta.getDocumento(), resposta);
 
             return StatusProposta.ELEGIVEL;
 

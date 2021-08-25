@@ -2,10 +2,8 @@ package br.com.zupacademy.mayza.proposta.propostas;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.transaction.Transactional;
@@ -31,8 +29,8 @@ public class PropostaController {
     public ResponseEntity<?> cadastrar(@Valid @RequestBody NovaPropostaRequest request, UriComponentsBuilder builder) {
 
         String documento = request.getDocumento();
-        if (propostaRepository.findByDocumento(documento).isPresent()) {
-            throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Já existe uma proposta para o documento informado");
+        if (propostaRepository.findByDocumento(Criptografia.criptografar(documento)).isPresent()) {
+            return ResponseEntity.unprocessableEntity().build();
         }
 
         Proposta novaProposta = request.toProposta();
