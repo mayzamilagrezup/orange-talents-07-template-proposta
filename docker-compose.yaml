@@ -93,20 +93,20 @@ services:
       LOG_LEVEL: INFO
       JAEGER_ENDPOINT: http://jaeger:14268/api/traces
 
-  propostas:
-    build:
-      dockerfile: Dockerfile
-      context: .
-    image: mayza/propostas
-    container_name: propostas
-    ports:
-    - 8081:8080
-    depends_on:
-      - postgres-propostas
-    environment:
-      DATABASE_URL: jdbc:postgresql://postgres-propostas:5432/propostas
-      ANALISE_URL: http://analise:9999/api/solicitacao
-      CARTOES_URL: http://contas:8888/api/cartoes
+#  propostas:
+#    build:
+#      dockerfile: Dockerfile
+#      context: .
+#    image: mayza/propostas
+#    container_name: propostas
+#    ports:
+#    - 8081:8080
+#    depends_on:
+#      - postgres-propostas
+#    environment:
+#      DATABASE_URL: jdbc:postgresql://postgres-propostas:5432/propostas
+#      ANALISE_URL: http://analise:9999/api/solicitacao
+#      CARTOES_URL: http://contas:8888/api/cartoes
 
   transacoes:
     image: 'zupacademy/transacoes'
