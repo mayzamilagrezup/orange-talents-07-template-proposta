@@ -31,7 +31,7 @@ public class NovaPropostaRequest {
     private String numero;
 
     @NotBlank
-    private  String bairro;
+    private String bairro;
 
     @NotBlank
     private String localidade;
@@ -64,5 +64,41 @@ public class NovaPropostaRequest {
 
     public String getDocumento() {
         return documento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getLocalidade() {
+        return localidade;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public BigDecimal getSalario() {
+        return salario;
     }
 }
